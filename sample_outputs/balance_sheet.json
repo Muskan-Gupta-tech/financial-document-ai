@@ -1,0 +1,289 @@
+{
+  "document_name": "sample_balance_sheet.pdf",
+  "document_type": "balance_sheet",
+  "processing_status": "PASS",
+  "overall_confidence": 0.92,
+  "file_validation": {
+    "file_type": "application/pdf",
+    "is_supported": true,
+    "is_readable": true,
+    "page_count": 1,
+    "status": "PASS"
+  },
+  "extracted_data": {
+    "statement_title": {
+      "value": "Consolidated Balance Sheet",
+      "confidence": 0.98,
+      "evidence": {
+        "source_text": "Consolidated Balance Sheet",
+        "page_number": 1
+      }
+    },
+    "company_name": {
+      "value": "HDFC Bank Limited",
+      "confidence": 0.9463,
+      "evidence": {
+        "source_text": "HDFC BANK",
+        "page_number": 1
+      }
+    },
+    "currency": {
+      "value": "INR",
+      "confidence": 0.8833,
+      "evidence": {
+        "source_text": "in*000",
+        "page_number": 1
+      }
+    },
+    "unit": {
+      "value": "in '000",
+      "confidence": 0.8833,
+      "evidence": {
+        "source_text": "in*000",
+        "page_number": 1
+      }
+    },
+    "periods": [
+      "31-Mar-17",
+      "31-Mar-16"
+    ],
+    "total_capital_and_liabilities": {
+      "31-Mar-17": {
+        "value": 8923441607.0,
+        "confidence": 0.9886,
+        "evidence": {
+          "source_text": "8,923,441,607",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 7622123264.0,
+        "confidence": 0.9915,
+        "evidence": {
+          "source_text": "7,622,123,264",
+          "page_number": 1
+        }
+      }
+    },
+    "total_assets": {
+      "31-Mar-17": {
+        "value": 8923441607.0,
+        "confidence": 0.9886,
+        "evidence": {
+          "source_text": "8,923,441,607",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 7622123264.0,
+        "confidence": 0.9915,
+        "evidence": {
+          "source_text": "7,622,123,264",
+          "page_number": 1
+        }
+      }
+    },
+    "line_items": [
+      {
+        "category": "capital_and_liabilities",
+        "item_name": "Capital",
+        "schedule": "1",
+        "values_by_period": {
+          "31-Mar-17": 5125091.0,
+          "31-Mar-16": 5056373.0
+        }
+      },
+      {
+        "category": "capital_and_liabilities",
+        "item_name": "Reserves and surplus",
+        "schedule": "2",
+        "values_by_period": {
+          "31-Mar-17": 912814397.0,
+          "31-Mar-16": 737984869.0
+        }
+      },
+      {
+        "category": "capital_and_liabilities",
+        "item_name": "Minority interest",
+        "schedule": "2A",
+        "values_by_period": {
+          "31-Mar-17": 2914389.0,
+          "31-Mar-16": 1806228.0
+        }
+      },
+      {
+        "category": "capital_and_liabilities",
+        "item_name": "Deposits",
+        "schedule": "3",
+        "values_by_period": {
+          "31-Mar-17": 6431342479.0,
+          "31-Mar-16": 5458732889.0
+        }
+      },
+      {
+        "category": "capital_and_liabilities",
+        "item_name": "Borrowings",
+        "schedule": "4",
+        "values_by_period": {
+          "31-Mar-17": 984156439.0,
+          "31-Mar-16": 1037139597.0
+        }
+      },
+      {
+        "category": "capital_and_liabilities",
+        "item_name": "Other liabilities and provisions",
+        "schedule": "5",
+        "values_by_period": {
+          "31-Mar-17": 587088812.0,
+          "31-Mar-16": 381403308.0
+        }
+      },
+      {
+        "category": "assets",
+        "item_name": "Cash and balances with Reserve Bank of India",
+        "schedule": "6",
+        "values_by_period": {
+          "31-Mar-17": 379105485.0,
+          "31-Mar-16": 300765846.0
+        }
+      },
+      {
+        "category": "assets",
+        "item_name": "Balances with banks and money at call and short notice",
+        "schedule": "7",
+        "values_by_period": {
+          "31-Mar-17": 114005711.0,
+          "31-Mar-16": 89922969.0
+        }
+      },
+      {
+        "category": "assets",
+        "item_name": "Investments",
+        "schedule": "8",
+        "values_by_period": {
+          "31-Mar-17": 2107771120.0,
+          "31-Mar-16": 1936338475.0
+        }
+      },
+      {
+        "category": "assets",
+        "item_name": "Advances",
+        "schedule": "9",
+        "values_by_period": {
+          "31-Mar-17": 5854809871.0,
+          "31-Mar-16": 4872904174.0
+        }
+      },
+      {
+        "category": "assets",
+        "item_name": "Fixed assets",
+        "schedule": "10",
+        "values_by_period": {
+          "31-Mar-17": 38146997.0,
+          "31-Mar-16": 34796976.0
+        }
+      },
+      {
+        "category": "assets",
+        "item_name": "Other assets",
+        "schedule": "11",
+        "values_by_period": {
+          "31-Mar-17": 429602423.0,
+          "31-Mar-16": 387394824.0
+        }
+      }
+    ]
+  },
+  "validation": {
+    "checks": [
+      {
+        "name": "balance_sheet_equation_31-Mar-17",
+        "formula": "total_capital_and_liabilities == total_assets",
+        "operands": {
+          "total_capital_and_liabilities": 8923441607.0,
+          "total_assets": 8923441607.0,
+          "period": "31-Mar-17"
+        },
+        "calculated_value": 8923441607.0,
+        "reported_value": 8923441607.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "Capital & Liabilities equals Assets for period 31-Mar-17."
+      },
+      {
+        "name": "capital_and_liabilities_breakdown_31-Mar-17",
+        "formula": "sum(capital_and_liability_items) == total_capital_and_liabilities",
+        "operands": {
+          "sum_items": 8923441607.0,
+          "period": "31-Mar-17"
+        },
+        "calculated_value": 8923441607.0,
+        "reported_value": 8923441607.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "Reconciles individual capital & liability items for 31-Mar-17."
+      },
+      {
+        "name": "assets_breakdown_31-Mar-17",
+        "formula": "sum(asset_items) == total_assets",
+        "operands": {
+          "sum_items": 8923441607.0,
+          "period": "31-Mar-17"
+        },
+        "calculated_value": 8923441607.0,
+        "reported_value": 8923441607.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "Reconciles individual asset line items for 31-Mar-17."
+      },
+      {
+        "name": "balance_sheet_equation_31-Mar-16",
+        "formula": "total_capital_and_liabilities == total_assets",
+        "operands": {
+          "total_capital_and_liabilities": 7622123264.0,
+          "total_assets": 7622123264.0,
+          "period": "31-Mar-16"
+        },
+        "calculated_value": 7622123264.0,
+        "reported_value": 7622123264.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "Capital & Liabilities equals Assets for period 31-Mar-16."
+      },
+      {
+        "name": "capital_and_liabilities_breakdown_31-Mar-16",
+        "formula": "sum(capital_and_liability_items) == total_capital_and_liabilities",
+        "operands": {
+          "sum_items": 7622123264.0,
+          "period": "31-Mar-16"
+        },
+        "calculated_value": 7622123264.0,
+        "reported_value": 7622123264.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "Reconciles individual capital & liability items for 31-Mar-16."
+      },
+      {
+        "name": "assets_breakdown_31-Mar-16",
+        "formula": "sum(asset_items) == total_assets",
+        "operands": {
+          "sum_items": 7622123264.0,
+          "period": "31-Mar-16"
+        },
+        "calculated_value": 7622123264.0,
+        "reported_value": 7622123264.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "Reconciles individual asset line items for 31-Mar-16."
+      }
+    ],
+    "overall_status": "PASS",
+    "issues": []
+  },
+  "processing_metadata": {
+    "ocr_used": true,
+    "processed_at": "2026-09-10T06:16:05.390846+00:00",
+    "processing_time_ms": 7423,
+    "extraction_method": "deterministic_parser"
+  }
+}

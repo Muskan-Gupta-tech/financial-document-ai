@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinEdge AI | Financial Document Intelligence Studio</title>
+  <link rel="stylesheet" href="/static/css/finedge.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Header Dock -->
+  <header class="app-nav">
+    <a href="/" class="brand-section">
+      <div class="brand-icon">FE</div>
+      <div class="brand-text-container">
+        <span class="brand-title">FinEdge AI</span>
+        <span class="brand-tagline">Document Intelligence</span>
+      </div>
+    </a>
+
+    <div class="nav-actions">
+      <div class="badge-live-status">
+        <span class="pulse-dot"></span>
+        <span>Engine Active</span>
+      </div>
+      <a href="/" class="nav-link">Dashboard</a>
+      <a href="/docs" target="_blank" class="nav-link">OpenAPI Specs</a>
+      <a href="/api/v1/health" target="_blank" class="nav-link">Health Status</a>
+      <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
+        <span id="theme-icon">&#9728;</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main View Container -->
+  <main class="container">
+    <div class="page-intro">
+      <div>
+        <h1 class="hero-title">Financial Document Intelligence Studio</h1>
+        <p class="hero-subtitle">
+          Autonomous multi-period extraction, tabular ledger parsing, and rigorous mathematical reconciliation across invoices, balance sheets, P&amp;L, and cash flows.
+        </p>
+      </div>
+    </div>
+
+    <!-- Live Performance KPI Row -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">Repository Documents</span>
+          <div class="kpi-icon">&#128196;</div>
+        </div>
+        <div class="kpi-value" id="kpi-total-docs">0</div>
+        <div class="kpi-footnote">Indexed in local storage</div>
+      </div>
+
+      <div class="kpi-card indigo">
+        <div class="kpi-header">
+          <span class="kpi-label">Reconciliation Rate</span>
+          <div class="kpi-icon">&#9989;</div>
+        </div>
+        <div class="kpi-value" id="kpi-pass-rate">100%</div>
+        <div class="kpi-footnote">Mathematical formula match</div>
+      </div>
+
+      <div class="kpi-card cyan">
+        <div class="kpi-header">
+          <span class="kpi-label">Category Coverage</span>
+          <div class="kpi-icon">&#128202;</div>
+        </div>
+        <div class="kpi-value" id="kpi-categories">4 Types</div>
+        <div class="kpi-footnote">Invoice, BS, P&amp;L, Cash Flow</div>
+      </div>
+
+      <div class="kpi-card amber">
+        <div class="kpi-header">
+          <span class="kpi-label">Extraction Accuracy</span>
+          <div class="kpi-icon">&#9889;</div>
+        </div>
+        <div class="kpi-value" id="kpi-avg-conf">98.2%</div>
+        <div class="kpi-footnote">RapidOCR + AI Dual Pass</div>
+      </div>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="workspace-grid">
+      <!-- Left: Upload & Ingest Card -->
+      <section class="card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+            Document Ingestion Pipeline
+          </h2>
+          <span style="font-size: 0.78rem; color: var(--text-muted);">Max 3 Pages &bull; PDF / JPG / PNG</span>
+        </div>
+
+        <div id="alert-box" style="display: none;"></div>
+
+        <form id="upload-form" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="doc-type-select" class="form-label">Document Category *</label>
+            <select id="doc-type-select" name="document_type" class="form-select" required>
+              <option value="" disabled selected>-- Select Financial Document Type --</option>
+              <option value="invoice">Invoice</option>
+              <option value="balance_sheet">Balance Sheet</option>
+              <option value="profit_and_loss">Profit &amp; Loss Statement</option>
+              <option value="cash_flow_statement">Cash Flow Statement</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Upload Financial Document *</label>
+            <div id="dropzone-box" class="dropzone-box">
+              <div class="dropzone-icon-container">
+                <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                </svg>
+              </div>
+              <div class="dropzone-title">Click to select or drag &amp; drop document</div>
+              <div class="dropzone-subtitle">Native PDF, Scanned Image, Multi-Period Schedules</div>
+              <div id="selected-file-badge" class="selected-file-badge">
+                <span>&#128196;</span>
+                <span id="file-name-text">No file chosen</span>
+              </div>
+              <input type="file" id="file-input" name="file" accept=".pdf,.jpg,.jpeg,.png" style="display: none;" required>
+            </div>
+          </div>
+
+          <button type="submit" id="process-btn" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+            <span id="btn-text">Execute 7-Stage Extraction &amp; Reconciliation</span>
+            <span id="btn-spinner" style="display: none;">Analyzing Document...</span>
+          </button>
+        </form>
+      </section>
+
+      <!-- Right: Engine Rules & Quick Samples -->
+      <section class="card">
+        <div class="card-header">
+          <h2 class="card-title">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Automated Audit Guardrails
+          </h2>
+          <span class="badge badge-success">Strict Math</span>
+        </div>
+
+        <ul style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.7; padding-left: 1.2rem; margin-bottom: 1.5rem;">
+          <li><strong style="color: var(--text-primary);">Invoices:</strong> Strict line item multiplication (Qty &times; Rate), net sum to subtotal, taxes &amp; discounts cross-footing, cash paid &amp; change reconciliation.</li>
+          <li><strong style="color: var(--text-primary);">Balance Sheets:</strong> Total Capital &amp; Liabilities = Total Assets balance equation verification, sub-schedule item aggregation.</li>
+          <li><strong style="color: var(--text-primary);">Profit &amp; Loss:</strong> Revenue schedule totals &minus; Operating expenditures = Net Profit Before Tax and group appropriations.</li>
+          <li><strong style="color: var(--text-primary);">Cash Flow:</strong> Operating + Investing + Financing + FX = Net Cash Change; Opening Cash + Net Change = Closing Cash.</li>
+        </ul>
+
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem;">
+            One-Click Benchmark Evaluators:
+          </div>
+          <div class="sample-pill-grid">
+            <button type="button" class="sample-pill-btn" onclick="loadSample('sample_invoice.jpg', 'invoice')">
+              <div class="sample-icon-circle">&#129534;</div>
+              <div>
+                <div class="sample-pill-name">Sample Invoice</div>
+                <div class="sample-pill-desc">Scanned image with line items</div>
+              </div>
+            </button>
+
+            <button type="button" class="sample-pill-btn" onclick="loadSample('sample_balance_sheet.pdf', 'balance_sheet')">
+              <div class="sample-icon-circle">&#128200;</div>
+              <div>
+                <div class="sample-pill-name">Balance Sheet</div>
+                <div class="sample-pill-desc">2-Period Schedule Tables</div>
+              </div>
+            </button>
+
+            <button type="button" class="sample-pill-btn" onclick="loadSample('sample_profit_and_loss.pdf', 'profit_and_loss')">
+              <div class="sample-icon-circle">&#128201;</div>
+              <div>
+                <div class="sample-pill-name">P&amp;L Statement</div>
+                <div class="sample-pill-desc">Revenue &amp; Expenditure Matrix</div>
+              </div>
+            </button>
+
+            <button type="button" class="sample-pill-btn" onclick="loadSample('sample_cash_flow.pdf', 'cash_flow_statement')">
+              <div class="sample-icon-circle">&#128181;</div>
+              <div>
+                <div class="sample-pill-name">Cash Flow Statement</div>
+                <div class="sample-pill-desc">Operating/Financing Delta</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Processed Financial Documents Ledger Section -->
+    <section class="card">
+      <div class="card-header">
+        <h2 class="card-title">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          Processed Financial Documents Ledger
+        </h2>
+        <button class="btn btn-outline" onclick="loadDocuments()" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;">
+          &#8635; Refresh Ledger
+        </button>
+      </div>
+
+      <div class="table-toolbar">
+        <div class="filter-pills">
+          <button class="filter-pill active" data-filter="all">All Documents</button>
+          <button class="filter-pill" data-filter="invoice">Invoices</button>
+          <button class="filter-pill" data-filter="balance_sheet">Balance Sheets</button>
+          <button class="filter-pill" data-filter="profit_and_loss">P&amp;L Statements</button>
+          <button class="filter-pill" data-filter="cash_flow_statement">Cash Flow</button>
+        </div>
+
+        <input type="text" id="search-input" class="search-box-input" placeholder="Search by name, category...">
+      </div>
+
+      <div class="table-responsive">
+        <table class="finedge-table">
+          <thead>
+            <tr>
+              <th>Document Artifact</th>
+              <th>Category</th>
+              <th>Audit Status</th>
+              <th>Mathematical Checks</th>
+              <th>Ingestion Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="documents-tbody">
+            <tr>
+              <td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                Loading ledger records...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    FinEdge AI &bull; Autonomous Document Intelligence &amp; Validation Microservice &bull; Version 1.0.0
+  </footer>
+
+  <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

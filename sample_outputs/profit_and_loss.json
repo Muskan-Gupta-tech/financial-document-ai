@@ -1,0 +1,535 @@
+{
+  "document_name": "sample_profit_and_loss.pdf",
+  "document_type": "profit_and_loss",
+  "processing_status": "PASS",
+  "overall_confidence": 0.94,
+  "file_validation": {
+    "file_type": "application/pdf",
+    "is_supported": true,
+    "is_readable": true,
+    "page_count": 1,
+    "status": "PASS"
+  },
+  "extracted_data": {
+    "statement_title": {
+      "value": "Consolidated Statement of Profit and Loss",
+      "confidence": 0.98,
+      "evidence": {
+        "source_text": "Consolidated Statement of Profit and Loss",
+        "page_number": 1
+      }
+    },
+    "company_name": {
+      "value": "HDFC Bank Limited",
+      "confidence": 0.9861,
+      "evidence": {
+        "source_text": "HDFC BANK",
+        "page_number": 1
+      }
+    },
+    "currency": {
+      "value": "INR",
+      "confidence": 0.8917,
+      "evidence": {
+        "source_text": "in“000",
+        "page_number": 1
+      }
+    },
+    "unit": {
+      "value": "in '000",
+      "confidence": 0.8917,
+      "evidence": {
+        "source_text": "in“000",
+        "page_number": 1
+      }
+    },
+    "periods": [
+      "31-Mar-17",
+      "31-Mar-16"
+    ],
+    "interest_earned": {
+      "31-Mar-17": {
+        "value": 732713529.0,
+        "confidence": 0.95,
+        "evidence": {
+          "source_text": "732,713,529",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 631615614.0,
+        "confidence": 0.9849,
+        "evidence": {
+          "source_text": "631,615,614",
+          "page_number": 1
+        }
+      }
+    },
+    "other_income": {
+      "31-Mar-17": {
+        "value": 128776329.0,
+        "confidence": 0.9657,
+        "evidence": {
+          "source_text": "128,776,329",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 112116541.0,
+        "confidence": 0.9928,
+        "evidence": {
+          "source_text": "112,116,541",
+          "page_number": 1
+        }
+      }
+    },
+    "total_income": {
+      "31-Mar-17": {
+        "value": 861489858.0,
+        "confidence": 0.963,
+        "evidence": {
+          "source_text": "861,489,858",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 743732155.0,
+        "confidence": 0.9894,
+        "evidence": {
+          "source_text": "743,732,155",
+          "page_number": 1
+        }
+      }
+    },
+    "interest_expended": {
+      "31-Mar-17": {
+        "value": 380415844.0,
+        "confidence": 0.9933,
+        "evidence": {
+          "source_text": "380,415,844",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 340695748.0,
+        "confidence": 0.9922,
+        "evidence": {
+          "source_text": "340,695,748",
+          "page_number": 1
+        }
+      }
+    },
+    "operating_expenses": {
+      "31-Mar-17": {
+        "value": 207510707.0,
+        "confidence": 0.9902,
+        "evidence": {
+          "source_text": "207,510,707",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 178318808.0,
+        "confidence": 0.9722,
+        "evidence": {
+          "source_text": "178,318,808",
+          "page_number": 1
+        }
+      }
+    },
+    "provisions_and_contingencies": {
+      "31-Mar-17": {
+        "value": 120689285.0,
+        "confidence": 0.9696,
+        "evidence": {
+          "source_text": "120,689,285",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 96544349.0,
+        "confidence": 0.9952,
+        "evidence": {
+          "source_text": "96,544,349",
+          "page_number": 1
+        }
+      }
+    },
+    "total_expenditure": {
+      "31-Mar-17": {
+        "value": 708615836.0,
+        "confidence": 0.9767,
+        "evidence": {
+          "source_text": "708,615,836",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 615558905.0,
+        "confidence": 0.9474,
+        "evidence": {
+          "source_text": "615,558,905",
+          "page_number": 1
+        }
+      }
+    },
+    "net_profit_for_year": {
+      "31-Mar-17": {
+        "value": 152874022.0,
+        "confidence": 0.9871,
+        "evidence": {
+          "source_text": "152,874,022",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 128173250.0,
+        "confidence": 0.9897,
+        "evidence": {
+          "source_text": "128,173,250",
+          "page_number": 1
+        }
+      }
+    },
+    "minority_interest": {
+      "31-Mar-17": {
+        "value": 367165.0,
+        "confidence": 0.9955,
+        "evidence": {
+          "source_text": "367,165",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 197212.0,
+        "confidence": 0.9989,
+        "evidence": {
+          "source_text": "197,212",
+          "page_number": 1
+        }
+      }
+    },
+    "share_in_associates": {
+      "31-Mar-17": {
+        "value": 23393.0,
+        "confidence": 0.9818,
+        "evidence": {
+          "source_text": "23,393",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 37278.0,
+        "confidence": 0.9948,
+        "evidence": {
+          "source_text": "37,278",
+          "page_number": 1
+        }
+      }
+    },
+    "consolidated_net_profit_group": {
+      "31-Mar-17": {
+        "value": 152530250.0,
+        "confidence": 0.9791,
+        "evidence": {
+          "source_text": "152,530,250",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 128013316.0,
+        "confidence": 0.9847,
+        "evidence": {
+          "source_text": "128,013,316",
+          "page_number": 1
+        }
+      }
+    },
+    "amalgamation_impact": {
+      "31-Mar-17": {
+        "value": 274507.0,
+        "confidence": 0.9931,
+        "evidence": {
+          "source_text": "274,507",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 0.0,
+        "confidence": 0.9546,
+        "evidence": {
+          "source_text": "For the year ended March 31, 2017",
+          "page_number": 1
+        }
+      }
+    },
+    "balance_brought_forward": {
+      "31-Mar-17": {
+        "value": 248255886.0,
+        "confidence": 0.9798,
+        "evidence": {
+          "source_text": "248,255,886",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 195508642.0,
+        "confidence": 0.9954,
+        "evidence": {
+          "source_text": "195,508,642",
+          "page_number": 1
+        }
+      }
+    },
+    "total_appropriations": {
+      "31-Mar-17": {
+        "value": 401060643.0,
+        "confidence": 0.9685,
+        "evidence": {
+          "source_text": "401,060,643",
+          "page_number": 1
+        }
+      },
+      "31-Mar-16": {
+        "value": 323521958.0,
+        "confidence": 0.9473,
+        "evidence": {
+          "source_text": "323,521,958",
+          "page_number": 1
+        }
+      }
+    },
+    "line_items": [
+      {
+        "section": "income",
+        "item_name": "Interest earned",
+        "schedule": "13",
+        "values_by_period": {
+          "31-Mar-17": 732713529.0,
+          "31-Mar-16": 631615614.0
+        }
+      },
+      {
+        "section": "income",
+        "item_name": "Other income",
+        "schedule": "14",
+        "values_by_period": {
+          "31-Mar-17": 128776329.0,
+          "31-Mar-16": 112116541.0
+        }
+      },
+      {
+        "section": "expenditure",
+        "item_name": "Interest expended",
+        "schedule": "15",
+        "values_by_period": {
+          "31-Mar-17": 380415844.0,
+          "31-Mar-16": 340695748.0
+        }
+      },
+      {
+        "section": "expenditure",
+        "item_name": "Operating expenses",
+        "schedule": "16",
+        "values_by_period": {
+          "31-Mar-17": 207510707.0,
+          "31-Mar-16": 178318808.0
+        }
+      },
+      {
+        "section": "expenditure",
+        "item_name": "Provisions and contingencies",
+        "schedule": null,
+        "values_by_period": {
+          "31-Mar-17": 120689285.0,
+          "31-Mar-16": 96544349.0
+        }
+      },
+      {
+        "section": "appropriations",
+        "item_name": "Transfer to Statutory Reserve",
+        "schedule": null,
+        "values_by_period": {
+          "31-Mar-17": 37771634.0,
+          "31-Mar-16": 31809345.0
+        }
+      },
+      {
+        "section": "appropriations",
+        "item_name": "Transfer to General Reserve",
+        "schedule": null,
+        "values_by_period": {
+          "31-Mar-17": 14549641.0,
+          "31-Mar-16": 12296213.0
+        }
+      },
+      {
+        "section": "appropriations",
+        "item_name": "Transfer to Capital Reserve",
+        "schedule": null,
+        "values_by_period": {
+          "31-Mar-17": 3134100.0,
+          "31-Mar-16": 2221532.0
+        }
+      }
+    ]
+  },
+  "validation": {
+    "checks": [
+      {
+        "name": "total_income_check_31-Mar-17",
+        "formula": "interest_earned + other_income == total_income",
+        "operands": {
+          "interest_earned": 732713529.0,
+          "other_income": 128776329.0,
+          "period": "31-Mar-17"
+        },
+        "calculated_value": 861489858.0,
+        "reported_value": 861489858.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": null
+      },
+      {
+        "name": "total_expenditure_check_31-Mar-17",
+        "formula": "interest_expended + operating_expenses + provisions_and_contingencies == total_expenditure",
+        "operands": {
+          "interest_expended": 380415844.0,
+          "operating_expenses": 207510707.0,
+          "provisions": 120689285.0,
+          "period": "31-Mar-17"
+        },
+        "calculated_value": 708615836.0,
+        "reported_value": 708615836.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": null
+      },
+      {
+        "name": "net_profit_check_31-Mar-17",
+        "formula": "total_income - total_expenditure == net_profit_for_year",
+        "operands": {
+          "total_income": 861489858.0,
+          "total_expenditure": 708615836.0,
+          "period": "31-Mar-17"
+        },
+        "calculated_value": 152874022.0,
+        "reported_value": 152874022.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": null
+      },
+      {
+        "name": "consolidated_group_profit_check_31-Mar-17",
+        "formula": "net_profit - minority_interest + share_in_associates == group_profit",
+        "operands": {
+          "net_profit": 152874022.0,
+          "minority_interest": 367165.0,
+          "associates_share": 23393.0,
+          "period": "31-Mar-17"
+        },
+        "calculated_value": 152530250.0,
+        "reported_value": 152530250.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": null
+      },
+      {
+        "name": "appropriations_available_check_31-Mar-17",
+        "formula": "group_profit + amalgamation_impact + balance_brought_forward == total_appropriations",
+        "operands": {
+          "group_profit": 152530250.0,
+          "amalgamation_impact": 274507.0,
+          "balance_brought_forward": 248255886.0,
+          "period": "31-Mar-17"
+        },
+        "calculated_value": 401060643.0,
+        "reported_value": 401060643.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": null
+      },
+      {
+        "name": "total_income_check_31-Mar-16",
+        "formula": "interest_earned + other_income == total_income",
+        "operands": {
+          "interest_earned": 631615614.0,
+          "other_income": 112116541.0,
+          "period": "31-Mar-16"
+        },
+        "calculated_value": 743732155.0,
+        "reported_value": 743732155.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": null
+      },
+      {
+        "name": "total_expenditure_check_31-Mar-16",
+        "formula": "interest_expended + operating_expenses + provisions_and_contingencies == total_expenditure",
+        "operands": {
+          "interest_expended": 340695748.0,
+          "operating_expenses": 178318808.0,
+          "provisions": 96544349.0,
+          "period": "31-Mar-16"
+        },
+        "calculated_value": 615558905.0,
+        "reported_value": 615558905.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": null
+      },
+      {
+        "name": "net_profit_check_31-Mar-16",
+        "formula": "total_income - total_expenditure == net_profit_for_year",
+        "operands": {
+          "total_income": 743732155.0,
+          "total_expenditure": 615558905.0,
+          "period": "31-Mar-16"
+        },
+        "calculated_value": 128173250.0,
+        "reported_value": 128173250.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": null
+      },
+      {
+        "name": "consolidated_group_profit_check_31-Mar-16",
+        "formula": "net_profit - minority_interest + share_in_associates == group_profit",
+        "operands": {
+          "net_profit": 128173250.0,
+          "minority_interest": 197212.0,
+          "associates_share": 37278.0,
+          "period": "31-Mar-16"
+        },
+        "calculated_value": 128013316.0,
+        "reported_value": 128013316.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": null
+      },
+      {
+        "name": "appropriations_available_check_31-Mar-16",
+        "formula": "group_profit + amalgamation_impact + balance_brought_forward == total_appropriations",
+        "operands": {
+          "group_profit": 128013316.0,
+          "amalgamation_impact": 0.0,
+          "balance_brought_forward": 195508642.0,
+          "period": "31-Mar-16"
+        },
+        "calculated_value": 323521958.0,
+        "reported_value": 323521958.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": null
+      }
+    ],
+    "overall_status": "PASS",
+    "issues": []
+  },
+  "processing_metadata": {
+    "ocr_used": true,
+    "processed_at": "2026-09-10T06:16:14.441710+00:00",
+    "processing_time_ms": 9034,
+    "extraction_method": "deterministic_parser"
+  }
+}

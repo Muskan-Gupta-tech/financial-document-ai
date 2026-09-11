@@ -1,0 +1,160 @@
+{
+  "document_name": "discrepant_invoice.pdf",
+  "document_type": "invoice",
+  "processing_status": "FAILED",
+  "overall_confidence": 0.94,
+  "file_validation": {
+    "file_type": "application/pdf",
+    "is_supported": true,
+    "is_readable": true,
+    "page_count": 1,
+    "status": "PASS"
+  },
+  "extracted_data": {
+    "invoice_number": {
+      "value": "INV-99201",
+      "confidence": 0.99,
+      "evidence": {
+        "source_text": "Invoice No: INV-99201",
+        "page_number": 1
+      }
+    },
+    "invoice_date": {
+      "value": "2026-08-10",
+      "confidence": 0.98,
+      "evidence": {
+        "source_text": "Date: 2026-08-10",
+        "page_number": 1
+      }
+    },
+    "vendor_name": {
+      "value": "Apex Logistics Corp",
+      "confidence": 0.97,
+      "evidence": {
+        "source_text": "Apex Logistics Corp",
+        "page_number": 1
+      }
+    },
+    "customer_name": {
+      "value": "Global Supply Ltd",
+      "confidence": 0.96,
+      "evidence": {
+        "source_text": "Bill To: Global Supply Ltd",
+        "page_number": 1
+      }
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": 0.99,
+      "evidence": {
+        "source_text": "USD",
+        "page_number": 1
+      }
+    },
+    "subtotal": {
+      "value": 1000.0,
+      "confidence": 0.98,
+      "evidence": {
+        "source_text": "Subtotal: ,000.00",
+        "page_number": 1
+      }
+    },
+    "tax_amount": {
+      "value": 100.0,
+      "confidence": 0.97,
+      "evidence": {
+        "source_text": "Tax (10%): .00",
+        "page_number": 1
+      }
+    },
+    "discount": {
+      "value": 0.0,
+      "confidence": 0.95,
+      "evidence": {
+        "source_text": "Discount: .00",
+        "page_number": 1
+      }
+    },
+    "total_amount": {
+      "value": 1250.0,
+      "confidence": 0.99,
+      "evidence": {
+        "source_text": "Total Amount: ,250.00",
+        "page_number": 1
+      }
+    },
+    "line_items": [
+      {
+        "item_number": 1,
+        "description": "Freight Shipping Service",
+        "quantity": 10.0,
+        "unit_price": 100.0,
+        "amount": 1000.0
+      }
+    ]
+  },
+  "validation": {
+    "checks": [
+      {
+        "name": "invoice_line_items_arithmetic",
+        "formula": "quantity * unit_price == line_total",
+        "operands": {
+          "total_items_checked": 1,
+          "failures": []
+        },
+        "calculated_value": null,
+        "reported_value": null,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "All line item unit price multiplications reconciled."
+      },
+      {
+        "name": "invoice_line_items_sum_reconciliation",
+        "formula": "sum(line_totals) == subtotal",
+        "operands": {
+          "sum_of_lines": 1000.0,
+          "reported_subtotal_or_total": 1000.0
+        },
+        "calculated_value": 1000.0,
+        "reported_value": 1000.0,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "Sum of line items matches reported subtotal."
+      },
+      {
+        "name": "invoice_total_check",
+        "formula": "subtotal + tax_amount - discount",
+        "operands": {
+          "subtotal": 1000.0,
+          "tax_amount": 100.0,
+          "discount": 0.0
+        },
+        "calculated_value": 1100.0,
+        "reported_value": 1250.0,
+        "variance": 150.0,
+        "status": "FAIL",
+        "notes": "Expected 1100.00, got 1250.00 (discrepancy detected)"
+      },
+      {
+        "name": "invoice_cash_change_check",
+        "formula": "cash_paid - total_amount == change",
+        "operands": {},
+        "calculated_value": null,
+        "reported_value": null,
+        "variance": null,
+        "status": "NOT_APPLICABLE",
+        "notes": "Cash paid or change not present in document"
+      }
+    ],
+    "overall_status": "FAIL",
+    "issues": [
+      "Validation failed for 'invoice_total_check': Expected 1100.00, got 1250.00 (discrepancy detected)"
+    ]
+  },
+  "processing_metadata": {
+    "ocr_used": true,
+    "processed_at": "2026-09-10T11:45:00Z",
+    "processing_time_ms": 1850,
+    "extraction_method": "deterministic_parser"
+  }
+}

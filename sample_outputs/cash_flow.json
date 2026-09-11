@@ -1,0 +1,311 @@
+{
+  "document_name": "sample_cash_flow.pdf",
+  "document_type": "cash_flow_statement",
+  "processing_status": "PASS",
+  "overall_confidence": 0.91,
+  "file_validation": {
+    "file_type": "application/pdf",
+    "is_supported": true,
+    "is_readable": true,
+    "page_count": 2,
+    "status": "PASS"
+  },
+  "extracted_data": {
+    "statement_title": {
+      "value": "Consolidated Cash Flow Statement",
+      "confidence": 0.98,
+      "evidence": {
+        "source_text": "Consolidated Cash Flow Statement",
+        "page_number": 1
+      }
+    },
+    "company_name": {
+      "value": "HDFC Bank Limited",
+      "confidence": 0.9625,
+      "evidence": {
+        "source_text": "HDFC Bank Limited",
+        "page_number": 1
+      }
+    },
+    "currency": {
+      "value": "INR",
+      "confidence": 0.8512,
+      "evidence": {
+        "source_text": "天 in crore",
+        "page_number": 1
+      }
+    },
+    "unit": {
+      "value": "in crore",
+      "confidence": 0.8512,
+      "evidence": {
+        "source_text": "天 in crore",
+        "page_number": 1
+      }
+    },
+    "periods": [
+      "March 31, 2025",
+      "March 31, 2024"
+    ],
+    "operating_cash_flow": {
+      "March 31, 2025": {
+        "value": 127241.84,
+        "confidence": 0.9987,
+        "evidence": {
+          "source_text": "127,241.84",
+          "page_number": 1
+        }
+      },
+      "March 31, 2024": {
+        "value": 19069.34,
+        "confidence": 0.9993,
+        "evidence": {
+          "source_text": "19,069.34",
+          "page_number": 1
+        }
+      }
+    },
+    "investing_cash_flow": {
+      "March 31, 2025": {
+        "value": -3850.64,
+        "confidence": 0.9997,
+        "evidence": {
+          "source_text": "(3,850.64)",
+          "page_number": 1
+        }
+      },
+      "March 31, 2024": {
+        "value": 5313.77,
+        "confidence": 0.9938,
+        "evidence": {
+          "source_text": "5,313.77",
+          "page_number": 1
+        }
+      }
+    },
+    "financing_cash_flow": {
+      "March 31, 2025": {
+        "value": -102477.54,
+        "confidence": 0.9991,
+        "evidence": {
+          "source_text": "(102,477.54)",
+          "page_number": 2
+        }
+      },
+      "March 31, 2024": {
+        "value": -3983.06,
+        "confidence": 0.9994,
+        "evidence": {
+          "source_text": "(3,983.06)",
+          "page_number": 2
+        }
+      }
+    },
+    "fx_translation_adjustment": {
+      "March 31, 2025": {
+        "value": 199.73,
+        "confidence": 0.9998,
+        "evidence": {
+          "source_text": "199.73",
+          "page_number": 2
+        }
+      },
+      "March 31, 2024": {
+        "value": 104.94,
+        "confidence": 1.0,
+        "evidence": {
+          "source_text": "104.94",
+          "page_number": 2
+        }
+      }
+    },
+    "net_increase_in_cash": {
+      "March 31, 2025": {
+        "value": 21113.39,
+        "confidence": 0.9975,
+        "evidence": {
+          "source_text": "21,113.39",
+          "page_number": 2
+        }
+      },
+      "March 31, 2024": {
+        "value": 20504.99,
+        "confidence": 0.9993,
+        "evidence": {
+          "source_text": "20,504.99",
+          "page_number": 2
+        }
+      }
+    },
+    "opening_cash": {
+      "March 31, 2025": {
+        "value": 228834.51,
+        "confidence": 0.9896,
+        "evidence": {
+          "source_text": "228,834.51",
+          "page_number": 2
+        }
+      },
+      "March 31, 2024": {
+        "value": 197147.81,
+        "confidence": 0.9983,
+        "evidence": {
+          "source_text": "197,147.81",
+          "page_number": 2
+        }
+      }
+    },
+    "amalgamation_cash": {
+      "March 31, 2025": {
+        "value": 0.0,
+        "confidence": 0.9405,
+        "evidence": {
+          "source_text": "For the year ended March 31,2025",
+          "page_number": 1
+        }
+      },
+      "March 31, 2024": {
+        "value": 11181.71,
+        "confidence": 0.9964,
+        "evidence": {
+          "source_text": "11,181.71",
+          "page_number": 2
+        }
+      }
+    },
+    "closing_cash": {
+      "March 31, 2025": {
+        "value": 249947.9,
+        "confidence": 0.9983,
+        "evidence": {
+          "source_text": "249,947.90",
+          "page_number": 2
+        }
+      },
+      "March 31, 2024": {
+        "value": 228834.51,
+        "confidence": 0.9896,
+        "evidence": {
+          "source_text": "228,834.51",
+          "page_number": 2
+        }
+      }
+    },
+    "line_items": [
+      {
+        "activity": "operating",
+        "item_name": "Consolidated profit before income tax",
+        "values_by_period": {
+          "March 31, 2025": 93594.13,
+          "March 31, 2024": 75184.14
+        }
+      },
+      {
+        "activity": "operating",
+        "item_name": "Depreciation on fixed assets",
+        "values_by_period": {
+          "March 31, 2025": 3805.23,
+          "March 31, 2024": 3092.08
+        }
+      },
+      {
+        "activity": "operating",
+        "item_name": "Increase in deposits",
+        "values_by_period": {
+          "March 31, 2025": 334010.95,
+          "March 31, 2024": 336964.81
+        }
+      },
+      {
+        "activity": "investing",
+        "item_name": "Purchase of fixed assets",
+        "values_by_period": {
+          "March 31, 2025": -4075.89,
+          "March 31, 2024": -4286.72
+        }
+      },
+      {
+        "activity": "financing",
+        "item_name": "Proceeds from issue of share capital",
+        "values_by_period": {
+          "March 31, 2025": 6346.5,
+          "March 31, 2024": 5249.73
+        }
+      }
+    ]
+  },
+  "validation": {
+    "checks": [
+      {
+        "name": "net_cash_flow_reconciliation_March 31, 2025",
+        "formula": "operating_cf + investing_cf + financing_cf + fx_adjustment == net_increase_in_cash",
+        "operands": {
+          "operating_cf": 127241.84,
+          "investing_cf": -3850.64,
+          "financing_cf": -102477.54,
+          "fx_adj": 199.73,
+          "period": "March 31, 2025"
+        },
+        "calculated_value": 21113.39,
+        "reported_value": 21113.39,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "Reconciled net change in cash for March 31, 2025."
+      },
+      {
+        "name": "closing_cash_reconciliation_March 31, 2025",
+        "formula": "opening_cash + net_increase_in_cash + amalgamation_cash == closing_cash",
+        "operands": {
+          "opening_cash": 228834.51,
+          "net_increase": 21113.39,
+          "amalgamation_cash": 0.0,
+          "period": "March 31, 2025"
+        },
+        "calculated_value": 249947.9,
+        "reported_value": 249947.9,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "Closing cash reconciled for period March 31, 2025."
+      },
+      {
+        "name": "net_cash_flow_reconciliation_March 31, 2024",
+        "formula": "operating_cf + investing_cf + financing_cf + fx_adjustment == net_increase_in_cash",
+        "operands": {
+          "operating_cf": 19069.34,
+          "investing_cf": 5313.77,
+          "financing_cf": -3983.06,
+          "fx_adj": 104.94,
+          "period": "March 31, 2024"
+        },
+        "calculated_value": 20504.99,
+        "reported_value": 20504.99,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "Reconciled net change in cash for March 31, 2024."
+      },
+      {
+        "name": "closing_cash_reconciliation_March 31, 2024",
+        "formula": "opening_cash + net_increase_in_cash + amalgamation_cash == closing_cash",
+        "operands": {
+          "opening_cash": 197147.81,
+          "net_increase": 20504.99,
+          "amalgamation_cash": 11181.71,
+          "period": "March 31, 2024"
+        },
+        "calculated_value": 228834.51,
+        "reported_value": 228834.51,
+        "variance": 0.0,
+        "status": "PASS",
+        "notes": "Closing cash reconciled for period March 31, 2024."
+      }
+    ],
+    "overall_status": "PASS",
+    "issues": []
+  },
+  "processing_metadata": {
+    "ocr_used": true,
+    "processed_at": "2026-09-10T06:16:30.913598+00:00",
+    "processing_time_ms": 16464,
+    "extraction_method": "deterministic_parser"
+  }
+}

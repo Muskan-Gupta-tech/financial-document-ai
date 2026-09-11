@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: financial-document-intelligence
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: ENVIRONMENT
+        value: production
+      - key: DATABASE_URL
+        value: sqlite:///./data/documents.db
+      - key: UPLOAD_DIR
+        value: ./data/uploads
+      - key: GEMINI_API_KEY
+        sync: false
