@@ -15,3 +15,21 @@ services:
         value: ./data/uploads
       - key: GEMINI_API_KEY
         sync: false
+      # --- Memory stabilization for the Render free instance (512MB) ---
+      # onnxruntime (used by RapidOCR) defaults to spawning a thread pool
+      # sized to the host's CPU count. Each thread carries its own working
+      # buffers, which adds meaningful memory overhead for no real benefit
+      # on a single small web request at a time. Pinning to 1 thread keeps
+      # ONNX inference memory bounded and predictable.
+      - key: OMP_NUM_THREADS
+        value: 1
+      - key: OPENBLAS_NUM_THREADS
+        value: 1
+      - key: ORT_NUM_THREADS
+        value: 1
+      # Caps the longest side (px) an uploaded image is allowed to reach
+      # before OCR runs on it (see backend/app/services/ocr_service.py).
+      # This is the primary fix for the JPG OOM: large photos were
+      # previously sent to RapidOCR at full resolution.
+      - key: OCR_MAX_DIMENSION
+        value: 2000
