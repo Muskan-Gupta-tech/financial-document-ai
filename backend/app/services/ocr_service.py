@@ -14,7 +14,7 @@ from backend.app.core.logging import logger
 # its limit. 2000px keeps text legible for typical financial documents
 # while cutting worst-case pixel count (and OCR memory) by 4x or more.
 # Override via env var if a case ever needs a different ceiling.
-MAX_OCR_DIMENSION = int(os.environ.get("OCR_MAX_DIMENSION", "2000"))
+MAX_OCR_DIMENSION = int(os.environ.get("OCR_MAX_DIMENSION", "1200"))
 
 # Default render DPI for PDF pages that need OCR (unchanged default
 # behavior). Kept as a constant so it can be scaled down per-page below
