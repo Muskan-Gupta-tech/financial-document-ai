@@ -20,6 +20,20 @@ An AI-powered document extraction, validation, and persistence platform for fina
 - API Base URL: https://financial-document-ai-noip.onrender.com
 
 ---
+## Demo Images
+
+### Dashboard
+
+![FinEdge AI Dashboard](./docs/demo.png)
+
+### Balance Sheet
+
+![Balance Sheet](./docs/balance.png)
+
+### History
+
+![Document History](./docs/history.png)
+
 
 ## 1. Problem Statement
 
