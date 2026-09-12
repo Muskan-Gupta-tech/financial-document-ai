@@ -110,6 +110,8 @@ Invalid documents are rejected with controlled API responses rather than exposin
 
 The complete architecture diagram is available here:
 
+
+![Architecture Diagram](docs/architecture.png)
 ```
 docs/architecture.png
 ```
